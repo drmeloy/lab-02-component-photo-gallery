@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: lightgoldenrodyellow;
+}
+
+body {
+    width: 80%;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 78px;
+    background: lightcyan;
+    padding: 30px;
+    border: medium solid black;
+    margin-top: 12px;
+    width: 100%;
+    text-align: center;
+}
+
+h2 {
+    padding: 20px;
+    background: bisque;
+    font-size: 28px;
+    margin-top: 12px;
+    border: medium solid black;
+}
+
+main {
+    width: 100%;
+    background: lightseagreen;
+    border: medium solid black;
+    margin-top: 12px;
+}
+
+.filter-bar {
+    background: cornsilk;
+    padding: 20px 60px;
+    font-size: 22px;
+    border-bottom: medium solid black;
+}
+
+.horns-select {
+    width: 8%;
+}
+
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-bottom: 20px;
+}
+
+figure {
+    width: 90%;
+    height: auto;
+    margin: 20px auto;
+    margin-bottom: 0;
+    border: 1px solid black;
+    padding: 12px;
+    background: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+    margin-bottom: 5px;
+}
+
+figure p {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+footer {
+    background: crimson;
+    text-align: center;
+    padding: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    border: medium solid black;
+    margin: 10px auto;
+}
