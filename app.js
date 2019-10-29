@@ -1,4 +1,6 @@
 import Component from './Component.js';
+import Header from './home/Header.js';
+import FilterBar from './home/Filter-Bar.js';
 import images from './data/images.js';
 
 class App extends Component {
@@ -23,15 +25,42 @@ class App extends Component {
     }
 
     onRender(dom) {
-        const header = new Header();
-        const headerDom = header.renderDOM();
-        dom.prepend(headerDom);
-
         const props = {
             images: images
         };
 
-        
+        const header = new Header();
+        const headerDom = header.renderDOM();
+        dom.prepend(headerDom);
+
+        const filterBarProps = {
+            images: images,
+            filter: (filterValue) => {
+                let filteredImages;
+            
+                if (!filterValue){
+                    filteredImages = images;
+                }
+                else {
+                    filteredImages = images.filter(image => {
+                        return image.keyword === filterValue;
+                    });
+                }
+
+                const updateProps = {
+                    images: filteredImages
+                };
+
+                gallery.update(updateProps);
+            }
+        };
+
+        const filterBar = new FilterBar(filterBarProps);
+        const filterBarDom = filterBar.renderDOM();
+        const filterSection = dom.querySelector('.filter-bar');
+        filterSection.appendChild(filterBarDom);
+
+
 
     }
 }
