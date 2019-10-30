@@ -2,6 +2,7 @@ import Component from '../Component.js';
 import Header from './Header.js';
 import FilterBar from './Filter-Bar.js';
 import Gallery from './Gallery.js';
+import Footer from './Footer.js';
 import images from '../data/images.js';
 
 class App extends Component {
@@ -65,6 +66,11 @@ class App extends Component {
         const filterBarDom = filterBar.renderDOM();
         const filterSection = dom.querySelector('.filter-bar');
         filterSection.appendChild(filterBarDom);
+
+        const footer = new Footer();
+        const footerDom = footer.renderDOM();
+        const footerSection = dom.querySelector('footer');
+        footerSection.appendChild(footerDom);
     }
 }
 

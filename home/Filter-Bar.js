@@ -1,4 +1,5 @@
 import Component from '../Component.js';
+import images from '../data/images.js';
 
 class FilterBar extends Component {
     renderHTML() {
@@ -6,18 +7,7 @@ class FilterBar extends Component {
             <div class="filter-bar">
                 <label for="type-select">Filter by type:</label>
                 <select name="type-filter" class="type-select">
-                    <option value="">ALL</option>
-                    <option value="narwhal">Narwhal</option>
-                    <option value="rhino">Rhino</option>
-                    <option value="unicorn">Unicorn</option>
-                    <option value="unilego">Unilego</option>
-                    <option value="triceratops">Triceratops</option>
-                    <option value="markhor">Markhor</option>
-                    <option value="mouflon">Mouflon</option>
-                    <option value="addax">Addax</option>
-                    <option value="chameleon">Chameleon</option>
-                    <option value="lizard">Lizard</option>
-                    <option value="dragon">Dragon</option>
+
                 </select>
             </div>
         `;
@@ -30,6 +20,23 @@ class FilterBar extends Component {
 
         select.addEventListener('change', () => {
             filterFunc(select.value);
+        });
+
+        const blankOption = document.createElement('option');
+        blankOption.value = '';
+        blankOption.textContent = 'ALL';
+        select.appendChild(blankOption);
+
+        images.forEach(image => {
+            const capitalize = (string) => {
+                return string.charAt(0).toUpperCase() + string.slice(1);
+            };
+            const key = image.keyword;
+
+            const option = document.createElement('option');
+            option.value = key;
+            option.textContent = capitalize(key);
+            select.appendChild(option);
         });
     }
 }
