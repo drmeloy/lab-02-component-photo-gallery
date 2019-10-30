@@ -1,2 +1,2 @@
-import './example.test.js';
 import './html-equal.js';
+import './image-item.test.js';
