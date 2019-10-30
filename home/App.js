@@ -1,8 +1,8 @@
-import Component from './Component.js';
-import Header from './home/Header.js';
-import FilterBar from './home/Filter-Bar.js';
-import Gallery from './home/Gallery.js';
-import images from './data/images.js';
+import Component from '../Component.js';
+import Header from './Header.js';
+import FilterBar from './Filter-Bar.js';
+import Gallery from './Gallery.js';
+import images from '../data/images.js';
 
 class App extends Component {
 
@@ -63,9 +63,8 @@ class App extends Component {
 
         const gallery = new Gallery(props);
         const galleryDom = gallery.renderDOM();
-        const gallerySection = document.querySelector('.gallery');
+        const gallerySection = dom.querySelector('.gallery');
         gallerySection.appendChild(galleryDom);
-
     }
 }
 

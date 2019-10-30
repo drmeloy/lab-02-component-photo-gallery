@@ -1,5 +1,5 @@
 import Component from '../Component.js';
-import imageItem from './Image-Item.js';
+import ImageItem from './Image-Item.js';
 
 class Gallery extends Component {
     renderHTML() {
@@ -16,7 +16,7 @@ class Gallery extends Component {
             const props = {
                 image: image
             };
-            const imageItem = new imageItem(props);
+            const imageItem = new ImageItem(props);
             const imageItemDom = imageItem.renderDOM();
             dom.appendChild(imageItemDom);
         });
