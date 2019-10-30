@@ -34,9 +34,14 @@ class App extends Component {
         const headerDom = header.renderDOM();
         dom.prepend(headerDom);
 
-        const filterBarProps = {
+        const gallery = new Gallery(props);
+        const galleryDom = gallery.renderDOM();
+        const gallerySection = dom.querySelector('.gallery');
+        gallerySection.appendChild(galleryDom);
+
+        const filterBarProps = ({
             images: images,
-            filter: (filterValue) => {
+            filterFunc: (filterValue) => {
                 let filteredImages;
             
                 if (!filterValue){
@@ -54,17 +59,12 @@ class App extends Component {
 
                 gallery.update(updateProps);
             }
-        };
+        });
 
         const filterBar = new FilterBar(filterBarProps);
         const filterBarDom = filterBar.renderDOM();
         const filterSection = dom.querySelector('.filter-bar');
         filterSection.appendChild(filterBarDom);
-
-        const gallery = new Gallery(props);
-        const galleryDom = gallery.renderDOM();
-        const gallerySection = dom.querySelector('.gallery');
-        gallerySection.appendChild(galleryDom);
     }
 }
 

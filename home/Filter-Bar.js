@@ -23,11 +23,13 @@ class FilterBar extends Component {
         `;
     }
 
-    onRender(select) {
-        const filter = this.props.filter;
+    onRender(dom) {
+        const filterFunc = this.props.filterFunc;
+
+        const select = dom.querySelector('.type-select');
 
         select.addEventListener('change', () => {
-            filter(select.value);
+            filterFunc(select.value);
         });
     }
 }
