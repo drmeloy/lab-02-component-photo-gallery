@@ -5,7 +5,7 @@ class ImageItem extends Component {
         const image = this.props.image;
 
         return /*html*/ `
-                <figure>
+            <figure>
                 <p>${image.title}</p>
                     <img src="${image.url}" alt="${image.description}" class="${image.keyword}" />
                 <figcaption>${image.description}</figcaption>
