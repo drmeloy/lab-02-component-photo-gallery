@@ -27,7 +27,15 @@ class FilterBar extends Component {
         blankOption.textContent = 'ALL';
         select.appendChild(blankOption);
 
-        images.forEach(image => {
+        const removeDupes = (arr, prop) => {
+            return arr.filter((obj, pos, arr) => {
+                return arr.map(mapObj => mapObj[prop]).indexOf(obj[prop]) === pos;
+            });
+        };
+
+        const filteredImages = removeDupes(images, 'keyword');        
+
+        filteredImages.forEach(image => {
             const capitalize = (string) => {
                 return string.charAt(0).toUpperCase() + string.slice(1);
             };
